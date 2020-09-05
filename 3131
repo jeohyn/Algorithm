@@ -1,0 +1,21 @@
+import java.io.FileInputStream;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+        int number = 1000000;
+        boolean [] num=new boolean[number+1];
+        num[0]=num[1]=false;
+        for(int i=2;i<=number;i++){
+            num[i]=true;
+        }
+        for(int i=2;i*i<=number;i++){
+            for(int j=i*i;j<=number;j+=i)
+                num[j]=false;
+        }
+        for(int i=0;i<=number;i++)
+            if(num[i]==true)
+            	System.out.print(i+" ");
+    }
+}
