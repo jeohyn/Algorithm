@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int mon=0;
+            int N = sc.nextInt();
+            int M = sc.nextInt();
+            String[][] number = new String [N][8];
+            String [] num = new String[8];
+            int [] price = new int[N];
+            for(int i=0;i<N;i++){
+                number[i] = sc.next().split("");
+                price[i] = sc.nextInt();
+            }
+            for(int k=0;k<M;k++){
+                num = sc.next().split("");
+                int flag =0;
+            	for(int i=0;i<N;i++){
+                	for(int j=0; j<8;j++){
+                    	if(number[i][j].equals("*")){
+                            flag=1;
+                           continue;
+                        }
+                        else if(number[i][j].equals(num[j]))
+                            flag=1;
+                        else{
+                            flag=0;
+                            break;
+                        }
+                    }
+                    if(flag==1)
+                        mon+=price[i];
+            	}
+            }
+            System.out.println("#"+test_case+" "+mon);
+        }
+	}
+}
