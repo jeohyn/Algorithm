@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.util.Arrays;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		
+
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            String before = sc.next();
+            String after = sc.next();
+            
+            String[] b_time=before.split(":");
+            String[] a_time=after.split(":");
+            int [] af_time = new int[3];
+            int [] bf_time = new int[3];
+            int a=0;
+            int b=0;
+            for(int i = 0; i<3; i++){
+                bf_time[i] = Integer.parseInt(b_time[i]);
+            } 
+            
+            for(int i = 0; i<3; i++){
+                af_time[i] = Integer.parseInt(a_time[i]);
+            }
+            if(af_time[0]-bf_time[0]<0)
+                af_time[0]+=24;
+            else if(af_time[0]==bf_time[0] && af_time[1]-bf_time[1]<0)
+                af_time[0]+=24;
+            else if(af_time[0]==bf_time[0] && af_time[1]-bf_time[1]<0&&af_time[2]-bf_time[2]<0)
+                af_time[0]+=24;
+            b=bf_time[0]*60*60+bf_time[1]*60+bf_time[2];
+            a=af_time[0]*60*60+af_time[1]*60+af_time[2];
+            int finals=a-b;
+            int s=finals%60;
+            int m=(finals/60)%60;
+            int h=(finals/60)/60;
+            System.out.print("#"+test_case+" ");
+            System.out.format("%02d:%02d:%02d\n",h,m,s);
+		}
+	}
+}
