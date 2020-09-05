@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(void)
+{
+	int test_case;
+	int T,ds,r;
+	
+	scanf("%d", &T);
+	
+	for (test_case = 1; test_case <= T; ++test_case)
+	{
+		scanf("%d",&ds);
+        if(ds<100)
+            r=0;
+        else if(ds<1000)
+            r=1;
+        else if(ds<10000)
+            r=2;
+        else if(ds<100000)
+            r=3;
+        else if(ds<1000000)
+            r=4;
+        else
+            r=5;
+        printf("#%d %d\n",test_case, r);
+	}
+	return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
