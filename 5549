@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(void)
+{
+	int test_case;
+	int T, i;
+    char num;
+    char nums[100];
+
+	scanf("%d", &T);
+
+	for (test_case = 1; test_case <= T; ++test_case)
+	{
+		scanf("%s", nums);
+        printf("#%d ", test_case);
+        for(i=0;nums[i]!='\0';i++)
+            num=nums[i];
+        num-='0';
+        if(num%2==0)
+            printf("Even\n");
+        else
+            printf("Odd\n");
+
+	}
+	return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
