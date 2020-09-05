@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int max=0;
+            int num=0;
+            int N=sc.nextInt();
+            int M=sc.nextInt();
+            int[] weight = new int[N];
+            for(int i=0;i<N;i++){
+                weight[i]=sc.nextInt();
+                num+=i;
+            }
+            num+=N-1;
+            int [] add = new int[num];
+            int a=0;
+            for(int i=0; i<N;i++){
+                for(int j=i+1;j<N;j++){
+                    add[a]=weight[i]+weight[j];
+                    a++;
+                }
+            }
+            for(int i=0;i<num;i++){
+                if(max<add[i] && add[i]<=M)
+                    max=add[i];
+            }
+            if(max==0)
+                max=-1;
+            System.out.println("#"+test_case+" "+max);
+        }
+    }
+}
