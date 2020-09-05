@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(void)
+{
+	int test_case;
+	int T, N, x, i;
+    float p, mon;
+	
+	scanf("%d", &T);
+	
+	for (test_case = 1; test_case <= T; ++test_case)
+	{
+		scanf("%d", &N);
+        mon=0;
+        for(i=0; i<N;i++){
+            scanf("%f %d", &p, &x);
+            mon+=p*x;
+        }
+        printf("#%d %f", test_case, mon);
+	}
+	return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
