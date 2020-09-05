@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int a=sc.nextInt();
+            int b=0;
+            int c=0;
+            if(a%2!=0)
+                b+=a;
+            while(c<=8){
+                a=sc.nextInt();
+                if(a%2!=0)
+                    b+=a;
+                c++;
+            }
+            System.out.println("#"+test_case+" "+b);
+		}
+	}
+}
