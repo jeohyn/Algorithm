@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Solution
+{
+	public static void main(String args[]) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int i=0;
+            int sum=0;
+            int num = sc.nextInt();
+            int [] number = new int [num];
+            for(int a=0; a<num;a++,i++){
+                int k = sc.nextInt();
+                if(k==0&&i>0){
+                    number[--i]=0;
+                    i--;
+                }
+                else
+                    number[i]=k;
+            }
+            i--;
+            for(;i>=0;i--)
+                sum+=number[i];
+            System.out.println("#"+test_case+" "+sum);
+		}
+	}
+}
