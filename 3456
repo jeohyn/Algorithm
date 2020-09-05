@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(void)
+{
+	int test_case;
+	int T, i;
+    int l1, l2, l3, l4;
+	
+    scanf("%d", &T);
+	
+	for (test_case = 1; test_case <= T; ++test_case)
+	{
+		scanf("%d %d %d", &l1, &l2, &l3);
+        l4=(l1==l2)?l3:(l1==l3)?l2:l1;
+        printf("#%d %d\n", test_case, l4);
+    }
+	return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
