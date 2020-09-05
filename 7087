@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.util.Arrays;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int num=0;
+            int N = sc.nextInt();
+            char [] alpha = new char[N];
+            for(int b=0;b<N;b++){
+                String a = sc.next();
+                alpha[b]=a.charAt(0);
+            }
+            Arrays.sort(alpha);
+            int i;
+            for( i=0;i<N-1;i++){
+                if(i==0&&alpha[i]!='A')
+                    break;
+                else if(i==0&&alpha[i]=='A')
+                    num++;
+                if((alpha[i]+1)==alpha[i+1])
+                    num++;
+                else if(alpha[i]==alpha[i+1])
+                        continue;
+                else if((alpha[i]+1)<alpha[i+1])
+                    break;
+            }
+            System.out.println("#"+test_case+" "+num);
+        }
+	}
+}
