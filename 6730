@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            int block = sc.nextInt();
+            int [] build = new int[block];
+            int max_u=0;
+            int max_d=0;
+            for(int i=0; i<block;i++)
+                build[i]=sc.nextInt();
+            for(int i=0; i<block-1;i++){
+                int builds=build[i]-build[i+1];
+                if(builds>0){
+                    if(max_d<builds)
+                        max_d=builds;
+                }
+                else{
+                    builds*=-1;
+                    if(max_u<builds)
+                        max_u=builds;
+                }
+            }
+            System.out.println("#"+test_case+" "+max_u+" "+max_d);
+		}
+	}
+}
