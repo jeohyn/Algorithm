@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(void){
+	int test_case;
+	int T, i;
+        char str[50];
+	scanf("%d", &T);
+	for (test_case = 1; test_case <= T; ++test_case){
+		scanf("%s", str);
+               printf("#%d ", test_case);
+               for(i=0;str[i]!='\0';i++){
+                   if(str[i]!='a'&&str[i]!='e'&&str[i]!='i'&&str[i]!='o'&&str[i]!='u')
+                       printf("%c",str[i]);
+               }
+        printf("\n");
+	}
+return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
