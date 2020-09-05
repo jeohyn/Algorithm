@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(void)
+{
+	int test_case;
+	int T, N, M, uni, twin;
+	
+	scanf("%d", &T);
+	
+	for (test_case = 1; test_case <= T; ++test_case)
+	{
+		scanf("%d %d", &N, &M);
+        twin=N/2;
+        uni=N%2;
+        while((twin+uni)!=M){
+            uni+=2;
+            twin-=1;
+        }
+        printf("#%d %d %d\n", test_case, uni, twin);
+	}
+	return 0; //정상종료시 반드시 0을 리턴해야 합니다.
+}
