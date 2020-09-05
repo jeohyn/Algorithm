@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+
+class Solution
+{
+	public static void main(String args[]) throws Exception
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            String[] bits = sc.next().split("");
+            String flag="1";
+            int num=0;
+            for(int i=0;i<bits.length;i++){
+                if(bits[i].equals(flag)){
+                    num++;
+                    if(flag.equals("0"))
+                        flag="1";
+                    else
+                        flag="0";
+                }
+            }
+            System.out.println("#"+test_case+" "+num);
+		}
+	}
+}
