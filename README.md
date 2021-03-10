@@ -1,4 +1,5 @@
-# SWEA
+# Algorithm
 
 
+##SWEA
 https://swexpertacademy.com/
