@@ -67,7 +67,7 @@ public class Solution {
         SinglyLinkedListNode add=new SinglyLinkedListNode(data);
         SinglyLinkedListNode before=head;
         SinglyLinkedListNode after=head;
-        for(int i=0; i<position;i++){
+        for(int i=0; i<position-1;i++){
             before=before.next;
             after=before.next;
         }
