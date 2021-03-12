@@ -52,7 +52,7 @@ public class Solution {
         }
     }
 
-    // Complete the insertNodeAtPosition function below.
+    // Complete the deleteNode function below.
 
     /*
      * For your reference:
@@ -63,16 +63,21 @@ public class Solution {
      * }
      *
      */
-    static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
-        SinglyLinkedListNode add=new SinglyLinkedListNode(data);
+    static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
         SinglyLinkedListNode before=head;
-        SinglyLinkedListNode after=head;
-        for(int i=0; i<position;i++){
-            before=before.next;
-            after=before.next;
+        SinglyLinkedListNode after=head.next.next;
+        
+        if(position==0){
+            head=head.next;
+            return head;
         }
-        before.next=add;
-        add.next=after;
+        
+        for(int i=0; i<position-1;i++){
+            before=before.next;
+            after=before.next.next;
+        }
+        before.next=after;
+
         return head;
     }
 
@@ -93,15 +98,12 @@ public class Solution {
             llist.insertNode(llistItem);
         }
 
-        int data = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
         int position = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        SinglyLinkedListNode llist_head = insertNodeAtPosition(llist.head, data, position);
+        SinglyLinkedListNode llist1 = deleteNode(llist.head, position);
 
-        printSinglyLinkedList(llist_head, " ", bufferedWriter);
+        printSinglyLinkedList(llist1, " ", bufferedWriter);
         bufferedWriter.newLine();
 
         bufferedWriter.close();
