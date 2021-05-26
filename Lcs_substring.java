@@ -1,4 +1,4 @@
-public class Lcs{
+public class Lcs_substring{
     public static void main(String[] args){
         char[] first={'a','b','c','d','e'};
         char[] second={'c','a','b','c','d'};
